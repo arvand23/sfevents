@@ -1,2 +1,6 @@
-<h1>Static#home</h1>
-<p>Find me in app/views/static/home.html.erb</p>
+<h1>SF Events Club</h1>
+<% if admin_signed_in? %>
+<p>You're an admin</p>
+<% else %>
+<p>You're not an admin</p>
+<% end %>

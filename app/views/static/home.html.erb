@@ -1,5 +1,17 @@
 <h1>SF Events Club</h1>
 <!-- nav bar, link to venues.html.erb-->
+<ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Find a Venue", static_venues_path %></li>
+        <% if admin_signed_in? %>
+          <li><%= link_to "Log out", destroy_admin_session_path, method: :delete %></li>
+        <% else %>
+        	<li><%= link_to "Admin Log in", new_admin_session_path, class: "btn btn-default btn-lg" %></li>
+         	<li><%= link_to "Admin Sign Up", new_admin_registration_path, class: "btn btn-primary btn-lg" %></li>
+        <% end %>
+</ul>
+
+
 <%= flash[:notice] if flash[:notice] %>
 <% if admin_signed_in? %>
 	<p>Yo <%= current_admin.email %>, add an event.</p>

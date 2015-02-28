@@ -1,6 +1,38 @@
 <h1>SF Events Club</h1>
+<!-- nav bar, link to venues.html.erb-->
+<%= flash[:notice] if flash[:notice] %>
 <% if admin_signed_in? %>
-<p>You're an admin</p>
+	<p>Yo <%= current_admin.email %>, add an event.</p>
+	<!-- event submission form -->
+	<%=form_for(@event) do |event| %>
+		<% if @event.errors.any? %>
+          <h2><%= pluralize(@event.errors.count, "error")%> made this not save </h2>
+          <ul>
+            <% @event.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
+    	</br>Title: </br>
+    	<%= event.text_field :title %></br>
+    	</br>URL: </br>
+    	<%= event.text_field :url %></br>
+    	</br>Description: </br>
+    	<%= event.text_field :description, placeholder: "Promo codes go here" %></br> <!-- gotta make this field bigger -->
+    	</br>Start Date:</br>
+    	<%= event.date_select :start_date %></br>
+    	</br>End Date:</br>
+    	<%= event.date_select :end_date %></br>
+    	</br>Location:</br>
+    	<%= event.text_field :location %></br>
+    	</br><%= event.submit "POW!" %></br>
+    <% end %>
+
+
+
+
 <% else %>
-<p>You're not an admin</p>
+	<p>You're not an admin</p>
+	<!-- list out all events -->
 <% end %>

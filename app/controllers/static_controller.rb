@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
   def home
+  	@event = Event.new
   end
 
   def contact

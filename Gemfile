@@ -2,6 +2,16 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
+#heroku
+group :development, :test do
+     gem 'sqlite3'  #if this is updated then update the sqlite3 on line 19 as well
+end
+
+group :production do
+     gem 'pg'
+     gem 'rails_12factor'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

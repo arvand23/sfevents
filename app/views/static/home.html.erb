@@ -33,9 +33,9 @@
     	</br>Description: </br>
     	<%= event.text_field :description, placeholder: "Promo codes go here" %></br> <!-- gotta make this field bigger -->
     	</br>Start Date:</br>
-    	<%= event.date_select :start_date %></br>
+    	<%= event.datetime_select :start_date %></br>
     	</br>End Date:</br>
-    	<%= event.date_select :end_date %></br>
+    	<%= event.datetime_select :end_date %></br>
     	</br>Location:</br>
     	<%= event.text_field :location %></br>
     	</br><%= event.submit "POW!" %></br>
@@ -43,9 +43,9 @@
 
 <p>Here are some upcoming SF Events</p> <!-- list them in order of start date -->
 		<% @eventsinfuture.each do |event| %>
-			</br><%= event.title %></br>
+			</br></br><%= event.title %></br>
 			</br><%= event.url %></br>
-			</br><%= event.start_date %> to <%= event.end_date %></br>
+			</br><%= event.start_date.strftime("%b %d at %I:%M %p") %> to <%= event.end_date.strftime("%b %d at %I:%M %p") %></br>
 			</br><%= event.description %></br>
 			</br><%= event.location %></br>
 		<% end %>
@@ -54,9 +54,9 @@
 <% else %>
 	<p>Here are some upcoming SF Events</p> <!-- list them in order of start date -->
 		<% @eventsinfuture.each do |event| %>
-			</br><%= event.title %></br>
+			</br></br><%= event.title %></br>
 			</br><%= event.url %></br>
-			</br><%= event.start_date %> to <%= event.end_date %></br>
+			</br><%= event.start_date.strftime("%b %d at %I:%M %p") %> to <%= event.end_date.strftime("%b %d at %I:%M %p") %></br>
 			</br><%= event.description %></br>
 			</br><%= event.location %></br>
 		<% end %>

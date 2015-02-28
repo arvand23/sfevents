@@ -41,10 +41,23 @@
     	</br><%= event.submit "POW!" %></br>
     <% end %>
 
-
+<p>Here are some upcoming SF Events</p> <!-- list them in order of start date -->
+		<% @eventsinfuture.each do |event| %>
+			</br><%= event.title %></br>
+			</br><%= event.url %></br>
+			</br><%= event.start_date %> to <%= event.end_date %></br>
+			</br><%= event.description %></br>
+			</br><%= event.location %></br>
+		<% end %>
 
 
 <% else %>
-	<p>You're not an admin</p>
-	<!-- list out all events -->
+	<p>Here are some upcoming SF Events</p> <!-- list them in order of start date -->
+		<% @eventsinfuture.each do |event| %>
+			</br><%= event.title %></br>
+			</br><%= event.url %></br>
+			</br><%= event.start_date %> to <%= event.end_date %></br>
+			</br><%= event.description %></br>
+			</br><%= event.location %></br>
+		<% end %>
 <% end %>

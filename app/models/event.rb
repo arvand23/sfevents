@@ -6,4 +6,12 @@ class Event < ActiveRecord::Base
 	validates :start_date, presence: true
 	validates :end_date, presence: true
 	validates :location, presence: true
+
+
+
+
+	def self.future; where('start_date > :nowminustwo', :nowminustwo => Time.now - 1.day); end
+
+
+
 end

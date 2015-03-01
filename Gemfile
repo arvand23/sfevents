@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'bootstrap-sass'
 
 #heroku
 group :development, :test do

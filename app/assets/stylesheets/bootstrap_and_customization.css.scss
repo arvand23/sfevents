@@ -16,9 +16,6 @@
 
 .headerphoto {
 background: image-url('header.jpg'); /* the .. fixed a bug */
-
-
-
 background-position:center;
 background-repeat: no-repeat;
 background-size: cover; /*this makes it stretch it and be 100% width and height at all times */
@@ -33,5 +30,5 @@ background-size: cover; /*this makes it stretch it and be 100% width and height 
 
 .logo {
 	height: 40px;
-	margin-right: 15px;
+	margin-right: 17px;
 }

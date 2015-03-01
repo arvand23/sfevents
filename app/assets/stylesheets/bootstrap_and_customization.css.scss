@@ -15,7 +15,10 @@
 }
 
 .headerphoto {
-background-image:url(/assets/header.jpg); /* the .. fixed a bug */
+background: image-url('header.jpg'); /* the .. fixed a bug */
+
+
+
 background-position:center;
 background-repeat: no-repeat;
 background-size: cover; /*this makes it stretch it and be 100% width and height at all times */

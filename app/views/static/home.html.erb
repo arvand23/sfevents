@@ -29,7 +29,7 @@
     	</br>Title: </br>
     	<%= event.text_field :title %></br>
     	</br>URL: </br>
-    	<%= event.text_field :url %></br>
+    	<%= event.text_field :url, placeholder: "Type http:// or bug"  %></br>
     	</br>Description: </br>
     	<%= event.text_field :description, placeholder: "Promo codes go here" %></br> <!-- gotta make this field bigger -->
     	</br>Start Date:</br>
@@ -43,12 +43,14 @@
 
 <p>Here are some upcoming SF Events</p> <!-- list them in order of start date -->
 		<% @eventsinfuture.each do |event| %>
-			</br></br><%= event.title %></br>
-			</br><%= event.url %></br>
-			</br><%= event.start_date.strftime("%b %d at %I:%M %p") %> to <%= event.end_date.strftime("%b %d at %I:%M %p") %></br>
+			<a href="<%= event.url %>"><%= event.title %></a>
+			<!--</br></br><%= event.title %></br>
+			</br><%= event.url %></br>-->
+			</br><%= event.start_date.strftime("%b %d at %I:%M %p") %>
+			<!--<%= event.end_date.strftime("%b %d at %I:%M %p") %></br>-->
 			</br><%= event.description %></br>
 			</br><%= event.location %></br>
-			<%= link_to 'Delete', delete_event_path(event), confirm: 'Are you sure?' %>
+			<%= link_to 'Delete', delete_event_path(event), confirm: 'Are you sure?' %></br></br></br></br>
 		<% end %>
 
 

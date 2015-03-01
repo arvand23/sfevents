@@ -1,11 +1,34 @@
 @import 'bootstrap';
 .h1home {
+	color: #fff;
 	text-align: center;
-	
+	font-weight: 100;
+  	font-size: 36px;
+  	padding-top: 110px;
+  	padding-bottom: 160px;
 }
 
 .center {
 	margin-left: auto;
 	margin-right: auto;
 	width: 60%;
+}
+
+.headerphoto {
+background-image:url(/assets/header.jpg); /* the .. fixed a bug */
+background-position:center;
+background-repeat: no-repeat;
+background-size: cover; /*this makes it stretch it and be 100% width and height at all times */
+}
+
+.header h1 {
+  color: #fff;
+  font-weight: 100;
+  font-size: 36px;
+  text-align: left;
+}
+
+.logo {
+	height: 40px;
+	margin-right: 15px;
 }

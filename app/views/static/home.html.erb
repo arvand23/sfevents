@@ -1,5 +1,7 @@
 
 <!-- nav bar, link to venues.html.erb-->
+<div class="headerphoto">
+<div class="container">
 <ul class="nav navbar-nav navbar-right">
         <!--<li><%= link_to "Home", root_path %></li>-->
         <li><%= link_to "Book a Venue For Your Event", static_venues_path %></li>
@@ -11,9 +13,18 @@
         <% end %>
 </ul>
 </br></br>
-<h1 class="h1home">SF Events Club</h1>
+<h1 class="h1home"><img src="assets/logo.png" class="logo">sf events club</h1>
+</div>
+</div>
 
 
+
+
+
+
+
+
+<div class="container">
 <%= flash[:notice] if flash[:notice] %>
 <% if admin_signed_in? %>
 	<p>Yo <%= current_admin.email %>, add an event.</p>
@@ -98,3 +109,4 @@
 		<% end %>
 	</div>
 <% end %>
+</div><!--end container-->

@@ -8,10 +8,36 @@
   	padding-bottom: 160px;
 }
 
+.smaller {
+	font-size: 25px;
+	margin-left: 40px;
+}
+
+.h1homevenues {
+	color: #fff;
+	text-align: center;
+	font-weight: 100;
+  	font-size: 36px;
+  	padding-top: 110px;
+  	padding-bottom: 10px;
+}
+.h2home {
+	color: #fff;
+	text-align: center;
+	font-weight: normal;
+  	font-size: 20px;
+  	padding-top: 10px;
+  	padding-bottom: 160px;
+}
+
 .center {
 	margin-left: auto;
 	margin-right: auto;
 	width: 40%; /*changed centering of text body */
+}
+
+.pushdown {
+	margin-top: 8px;
 }
 
 .paragraph {

@@ -85,12 +85,12 @@
 <!-- list them in order of start date -->
 	<div class="center">
 		<% @eventsinfuture.each do |event| %>
-			<div class="row">
-				</br></br><div class="col-md-7">
+			</br></br></br><div class="row">
+				<div class="col-md-7">
 					<h4><a href="<%= event.url %>"><%= event.title %></a></h4>
 				</div>
 			
-				<div class="col-md-5">
+				<div class="col-md-5 pushdown">
 					<%= event.start_date.strftime("%b %d at %I:%M %p") %>
 				</div>
 			</div>

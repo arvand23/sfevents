@@ -1,2 +1,20 @@
-<h1>Book a Venue</h1>
-<p>For your event.</p>
+<div class="headerphoto2">
+<div class="container">
+<ul class="nav navbar-nav navbar-left">
+        <!--<li><%= link_to "Home", root_path %></li>-->
+        <li><%= link_to "Home", static_home_path %></li>
+        <% if admin_signed_in? %>
+          <li><%= link_to "Log out", destroy_admin_session_path, method: :delete %></li>
+        <% else %>
+        	<!--<li><%= link_to "Admin Log in", new_admin_session_path, class: "btn btn-default btn-lg" %></li>
+         	<li><%= link_to "Admin Sign Up", new_admin_registration_path, class: "btn btn-primary btn-lg" %></li>-->
+        <% end %>
+</ul>
+</br></br>
+<h1 class="h1home">Book a Venue for Your SF Event</h1>
+</div>
+</div>
+<div class="center paragraph">
+<h4 class="paragraph">We can connect you to venue owners in SF for your fireside chat, open bar, networking event or happy hour.</br></br>
+Email book@sfevents.club with event date and details, and we'll get back to you.</h4>
+</div>

@@ -1,15 +1,17 @@
-<h1>SF Events Club</h1>
+
 <!-- nav bar, link to venues.html.erb-->
 <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Find a Venue", static_venues_path %></li>
+        <!--<li><%= link_to "Home", root_path %></li>-->
+        <li><%= link_to "Book a Venue For Your Event", static_venues_path %></li>
         <% if admin_signed_in? %>
           <li><%= link_to "Log out", destroy_admin_session_path, method: :delete %></li>
         <% else %>
-        	<li><%= link_to "Admin Log in", new_admin_session_path, class: "btn btn-default btn-lg" %></li>
-         	<li><%= link_to "Admin Sign Up", new_admin_registration_path, class: "btn btn-primary btn-lg" %></li>
+        	<!--<li><%= link_to "Admin Log in", new_admin_session_path, class: "btn btn-default btn-lg" %></li>
+         	<li><%= link_to "Admin Sign Up", new_admin_registration_path, class: "btn btn-primary btn-lg" %></li>-->
         <% end %>
 </ul>
+</br></br>
+<h1 class="h1home">SF Events Club</h1>
 
 
 <%= flash[:notice] if flash[:notice] %>
@@ -41,28 +43,58 @@
     	</br><%= event.submit "POW!" %></br>
     <% end %>
 
-<p>Here are some upcoming SF Events</p> <!-- list them in order of start date -->
+ <!-- list them in order of start date -->
 		<% @eventsinfuture.each do |event| %>
-			<a href="<%= event.url %>"><%= event.title %></a>
-			<!--</br></br><%= event.title %></br>
-			</br><%= event.url %></br>-->
-			</br><%= event.start_date.strftime("%b %d at %I:%M %p") %>
-			<!--<%= event.end_date.strftime("%b %d at %I:%M %p") %></br>-->
-			</br><%= event.description %></br>
-			</br><%= event.location %></br>
+			<div class="row">
+				</br></br><div class="col-md-5">
+					<h4><a href="<%= event.url %>"><%= event.title %></a></h4>
+				</div>
+			
+				<div class="col-md-4">
+					<%= event.start_date.strftime("%b %d at %I:%M %p") %>
+				</div>
+			</div>
+			
+			<div class="row">	
+				<div class="col-md-8">
+					</br><%= event.description %></br>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+					</br><%= event.location %></br>
+				</div>
+			</div>
 			<%= link_to 'Delete', delete_event_path(event), confirm: 'Are you sure?' %></br></br></br></br>
 		<% end %>
 
 
 <% else %>
-	<p>Here are some upcoming SF Events</p> <!-- list them in order of start date -->
+<!-- list them in order of start date -->
+	<div class="center">
 		<% @eventsinfuture.each do |event| %>
-			<a href="<%= event.url %>"><%= event.title %></a>
-			<!--</br></br><%= event.title %></br>
-			</br><%= event.url %></br>-->
-			</br><%= event.start_date.strftime("%b %d at %I:%M %p") %>
-			<!--<%= event.end_date.strftime("%b %d at %I:%M %p") %></br>-->
-			</br><%= event.description %></br>
-			</br><%= event.location %></br>
+			<div class="row">
+				</br></br><div class="col-md-5">
+					<h4><a href="<%= event.url %>"><%= event.title %></a></h4>
+				</div>
+			
+				<div class="col-md-4">
+					<%= event.start_date.strftime("%b %d at %I:%M %p") %>
+				</div>
+			</div>
+			
+			<div class="row">	
+				<div class="col-md-8">
+					</br><%= event.description %></br>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+					</br><%= event.location %></br>
+				</div>
+			</div>
 		<% end %>
+	</div>
 <% end %>

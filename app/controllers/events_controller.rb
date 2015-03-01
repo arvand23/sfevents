@@ -6,10 +6,17 @@ class EventsController < ApplicationController
 		@event.save
 
 		if @event.save
-			redirect_to root_path, :notice => "Good job submitting that event, bro."
+			redirect_to root_path, :notice => "Event saved, bro."
 		else
 			render static_home_path
 		end
+	end
+
+
+	def delete
+		@event = Event.find(params[:id])
+		@event.destroy
+		redirect_to static_home_path, :notice => "Event deleted, bro."
 	end
 
 	private

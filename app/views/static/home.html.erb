@@ -48,7 +48,7 @@
 			</br><%= event.start_date.strftime("%b %d at %I:%M %p") %> to <%= event.end_date.strftime("%b %d at %I:%M %p") %></br>
 			</br><%= event.description %></br>
 			</br><%= event.location %></br>
-			<!-- delete event -->
+			<%= link_to 'Delete', delete_event_path(event), confirm: 'Are you sure?' %>
 		<% end %>
 
 
